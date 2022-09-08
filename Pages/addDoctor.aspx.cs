@@ -41,12 +41,13 @@ namespace HomeWorkBM5_Aplication.Pages
             string title = errorMessage(Title.Text, "Tytuł naukowy");
             string email = errorMessage(Email.Text, "Email");
             string phone = errorMessage(PhoneNum.Text, "Numer telefonu");
-            int spec = DropDownList1.SelectedIndex;
+            int spec = DropDownList1.SelectedIndex==0 ? 1 : DropDownList1.SelectedIndex;
             if (errorCatch) return;
             System.Diagnostics.Debug.WriteLine("Bez errora");
 
             con.StartConection();
-            MySqlCommand cmd = new MySqlCommand("UPDATE doctors SET firstName = 'Dawid' WHERE doctors.id = 3", con.connection);
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `doctors` (`id`, `firstName`, `secondName`, `academicTittle`, `email`, `phoneNumber`, `specialization`)"+
+                $" VALUES (NULL, '{firstName}', '{secoundName}', '{title}', '{email}', '{phone}', '{spec}')", con.connection);
             cmd.ExecuteNonQuery();
             con.CloseConection();
         }
