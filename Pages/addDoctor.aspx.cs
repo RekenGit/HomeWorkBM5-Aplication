@@ -40,7 +40,7 @@ namespace HomeWorkBM5_Aplication.Pages
         {
             errorCatch = false;
             string firstName = errorMessage(FirstName.Text, "Imię");
-            string secoundName = errorMessage(SecondName.Text, "Nazwisko");
+            string secoundName = errorMessage(LastName.Text, "Nazwisko");
             string title = errorMessage(Title.Text, "Tytuł naukowy");
             string email = errorMessage(Email.Text, "Email");
             string phone = errorMessage(PhoneNum.Text, "Numer telefonu");
@@ -48,7 +48,7 @@ namespace HomeWorkBM5_Aplication.Pages
             if (errorCatch) return;
 
             con.StartConection();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `doctors` (`id`, `firstName`, `secondName`, `academicTitle`, `email`, `phoneNumber`, `specialization`)" +
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `doctors` (`id`, `firstName`, `lastName`, `academicTitle`, `email`, `phoneNumber`, `specialization`)" +
                 $" VALUES (NULL, '{firstName}', '{secoundName}', '{title}', '{email}', '{phone}', '{spec}')", con.connection);
             cmd.ExecuteNonQuery();
             con.CloseConection();
@@ -86,7 +86,7 @@ namespace HomeWorkBM5_Aplication.Pages
         }
 
         protected void FirstName_TextChanged(object sender, EventArgs e) { B1.Visible = false; }
-        protected void SecondName_TextChanged(object sender, EventArgs e) { B2.Visible = false; }
+        protected void LastName_TextChanged(object sender, EventArgs e) { B2.Visible = false; }
         protected void Title_TextChanged(object sender, EventArgs e) { B3.Visible = false; }
         protected void Email_TextChanged(object sender, EventArgs e) { B4.Visible = false; }
         protected void PhoneNum_TextChanged(object sender, EventArgs e) { B5.Visible = false; }

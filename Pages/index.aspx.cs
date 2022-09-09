@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HomeWorkBM5_Aplication
 {
@@ -16,36 +17,38 @@ namespace HomeWorkBM5_Aplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            con.StartConection();
+            MySqlCommand cmd = new MySqlCommand("SELECT id, firstName, lastName FROM doctors", con.connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                con.StartConection();
-                MySqlCommand cmd = new MySqlCommand("SELECT id, firstName, secondName FROM doctors", con.connection);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    //Response.Write("<script>test("+reader.GetString(1)+");</script>");
-                    HtmlGenericControl createDiv = new HtmlGenericControl("div");
-                    createDiv.Attributes.Add("class", "doctor");
-                    createDiv.InnerHtml =
-                        "<div class=\"normal\"> \n" +
-                            "<h3 style=\"float:left;\">" + reader.GetString(1) + " " + reader.GetString(2) + "</h3> \n" +
-                        //"<button OnClick=\"Button_Generated\" style=\"float:right;\"><i class=\"fa-solid fa-chevron-down\"></i></button> \n" +
-                        //"<asp:Button ID=\"Button_"+ reader.GetValue(0)+ "\" runat=\"server\" OnClick=\"Button_Generated\" Text=\"<i class=\"fa-solid fa-chevron-down\"></i>\" />" +
-                        "</div> \n" +
-                        "<div class=\"\"></div> \n";
-                    //createDiv.InnerHtml = "document.getElementById('contentBox').innerHTML = \""+newDoctor+"\";";
+                // Create DIV that hold all data of a doctor.
+                HtmlGenericControl createDiv = new HtmlGenericControl("div");
+                createDiv.Attributes.Add("class", "doctor");
+                contentBox.Controls.Add(createDiv);
 
-                    contentBox.Controls.Add(createDiv);
+                // Create Header that show only fistname and lastname.
+                HtmlGenericControl createDiv2 = new HtmlGenericControl("div");
+                createDiv2.Attributes.Add("class", "doctorHeader");
+                createDiv2.InnerHtml = "<h3 style=\"float:left;\">" + reader.GetString(1) + " " + reader.GetString(2) + "</h3>";
+                createDiv.Controls.Add(createDiv2);
 
-                    Button button = new Button();
-                    button.Text = "Edit";
-                    button.UseSubmitBehavior = false;
-                    button.Click += new EventHandler(Button_Generated);
-                    button.CommandArgument = "" + reader.GetValue(0);
-                    contentBox.Controls.Add(button);
-                }
-                con.CloseConection();
+                LinkButton button = new LinkButton();
+                button.ID = "dhc_button_" + reader.GetValue(0);
+                button.Attributes.Add("class", "viewButton");
+                button.Text = "<i class=\"fa-solid fa-chevron-down\"></i>";
+                button.Click += new EventHandler(Button_Generated);
+                button.CommandArgument = "" + reader.GetValue(0);
+                createDiv2.Controls.Add(button);
+
+                HtmlGenericControl createDiv3 = new HtmlGenericControl("div");
+                createDiv3.ID = "dhc_" + reader.GetValue(0);
+                createDiv3.Attributes.Add("class", "doctorHidenContent");
+                createDiv3.Visible = false;
+                createDiv3.InnerHtml = "<h3>TEST</h3><h3>TEST</h3><h3>TEST</h3>";
+                contentBox.Controls.Add(createDiv3);
             }
+            con.CloseConection();
         }
         protected void Button_Add(object sender, EventArgs e)
         {
@@ -61,8 +64,13 @@ namespace HomeWorkBM5_Aplication
         }
         protected void Button_Generated(object sender, EventArgs e)
         {
-            Button but = (Button)sender;
-            Response.Write("<script>console.log('"+ but.CommandArgument.ToString() + "');</script>");
+            string id = (sender as LinkButton).CommandArgument;
+            bool isVisible = contentBox.FindControl("dhc_" + id).Visible;
+            contentBox.FindControl("dhc_" + id).Visible = !isVisible;
+
+            LinkButton d1 = (LinkButton)contentBox.FindControl("dhc_button_" + id);
+            if (isVisible) d1.Text = "<i class=\"fa-solid fa-chevron-down\"></i>";
+            else d1.Text = "<i class=\"fa-solid fa-chevron-up\"></i>";
         }
     }
 }

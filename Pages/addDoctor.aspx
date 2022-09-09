@@ -26,7 +26,7 @@
                 <br /><br />
                 <!-- Nazwisko -->
                 <asp:Label ID="Label2" runat="server" Text="Nazwisko: " Font-Size="30px"></asp:Label>
-                <asp:TextBox AutoCompleteType="LastName" ID="SecondName" runat="server" Rows="1" Font-Size="30px" Height="70px" Width="500px" OnTextChanged="SecondName_TextChanged"></asp:TextBox>
+                <asp:TextBox AutoCompleteType="LastName" ID="LastName" runat="server" Rows="1" Font-Size="30px" Height="70px" Width="500px" OnTextChanged="LastName_TextChanged"></asp:TextBox>
                 <b runat="server" id="B2" class="wrong" visible="false">*</b>
                 <br /><br />
                 <!-- Tytuł naukowy -->
@@ -47,7 +47,7 @@
                 <!-- Specializacja -->
                 <asp:Label ID="Label6" runat="server" Text="Specializacja: " Font-Size="30px"></asp:Label>
                 <asp:DropDownList ID="DropDownList1" runat="server" Font-Size="30px" Height="70px" Width="500px"></asp:DropDownList>
-                <br /><br /><br /><br />
+                <br /><br />
                 <div id="options">
                     <p runat="server" id="ErrorMessage" visible="false" class="wrong"></p>
                     <asp:Button ID="Button2" runat="server" OnClick="Button_Send" Text="Zatwierdz dane" Height="58px" />

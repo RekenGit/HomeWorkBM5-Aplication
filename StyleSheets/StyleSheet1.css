@@ -62,3 +62,14 @@
 td a {
     margin-left: 20px;
 }
+
+.doctorHeader a, .doctorHeader a:visited, .doctorHeader a:hover, .doctorHeader a:active {
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+.doctorHidenContent {
+
+}

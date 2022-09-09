@@ -24,7 +24,7 @@
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="Id" />
                         <asp:BoundField DataField="firstName" HeaderText="Imię" />
-                        <asp:BoundField DataField="secondName" HeaderText="Nazwisko" />
+                        <asp:BoundField DataField="lastName" HeaderText="Nazwisko" />
                         <asp:BoundField DataField="academicTitle" HeaderText="Tytuł naukowy" />
                         <asp:BoundField DataField="email" HeaderText="Email" />
                         <asp:BoundField DataField="phoneNumber" HeaderText="Numer telefonu" />

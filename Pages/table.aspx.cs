@@ -18,7 +18,7 @@ namespace HomeWorkBM5_Aplication.Pages
             if (!IsPostBack)
             {
                 con.StartConection();
-                MySqlCommand cmd = new MySqlCommand("SELECT doctors.id, doctors.firstName, doctors.secondName, doctors.academicTitle, doctors.email, doctors.phoneNumber, " +
+                MySqlCommand cmd = new MySqlCommand("SELECT doctors.id, doctors.firstName, doctors.lastName, doctors.academicTitle, doctors.email, doctors.phoneNumber, " +
                     "specialization.name as specialization FROM doctors, specialization where doctors.specialization = specialization.id", con.connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows == true)

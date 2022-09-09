@@ -69,13 +69,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Kontrolka SecondName.
+        /// Kontrolka LastName.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SecondName;
+        protected global::System.Web.UI.WebControls.TextBox LastName;
 
         /// <summary>
         /// Kontrolka B2.
