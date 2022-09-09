@@ -49,7 +49,7 @@
                 <asp:DropDownList ID="DropDownList1" runat="server" Font-Size="30px" Height="70px" Width="500px"></asp:DropDownList>
                 <br /><br /><br /><br />
                 <div id="options">
-                    <p runat="server" id="B7" visible="false" class="wrong"></p>
+                    <p runat="server" id="ErrorMessage" visible="false" class="wrong"></p>
                     <asp:Button ID="Button2" runat="server" OnClick="Button_Send" Text="Zatwierdz dane" Height="58px" />
                 </div>
             </div>

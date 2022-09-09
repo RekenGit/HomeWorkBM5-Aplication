@@ -186,13 +186,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
-        /// Kontrolka B7.
+        /// Kontrolka ErrorMessage.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl B7;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorMessage;
 
         /// <summary>
         /// Kontrolka Button2.

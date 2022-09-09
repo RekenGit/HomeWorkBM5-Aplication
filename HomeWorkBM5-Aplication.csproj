@@ -156,6 +156,7 @@
   <ItemGroup>
     <Content Include="Pages\table.aspx" />
     <Content Include="Pages\addDoctor.aspx" />
+    <Content Include="Scripts\jquery-3.6.1.min.js" />
     <Content Include="StyleSheets\StyleSheet1.css" />
     <Content Include="Web.config" />
     <Content Include="Pages\index.aspx" />

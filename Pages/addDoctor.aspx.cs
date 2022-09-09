@@ -15,17 +15,20 @@ namespace HomeWorkBM5_Aplication.Pages
         connectMySql con = new connectMySql();
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.StartConection();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM specialization", con.connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.HasRows == true)
+            if (!IsPostBack)
             {
-                DropDownList1.DataSource = reader;
-                DropDownList1.DataTextField = "name";
-                DropDownList1.DataValueField = "id";
-                DropDownList1.DataBind();
+                con.StartConection();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM specialization", con.connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows == true)
+                {
+                    DropDownList1.DataSource = reader;
+                    DropDownList1.DataTextField = "name";
+                    DropDownList1.DataValueField = "id";
+                    DropDownList1.DataBind();
+                }
+                con.CloseConection();
             }
-            con.CloseConection();
         }
         protected void Button_Back(object sender, EventArgs e)
         {
@@ -41,12 +44,11 @@ namespace HomeWorkBM5_Aplication.Pages
             string title = errorMessage(Title.Text, "Tytuł naukowy");
             string email = errorMessage(Email.Text, "Email");
             string phone = errorMessage(PhoneNum.Text, "Numer telefonu");
-            int spec = DropDownList1.SelectedIndex==0 ? 1 : DropDownList1.SelectedIndex;
+            int spec = Convert.ToInt32(DropDownList1.SelectedItem.Value);
             if (errorCatch) return;
-            System.Diagnostics.Debug.WriteLine("Bez errora");
 
             con.StartConection();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `doctors` (`id`, `firstName`, `secondName`, `academicTittle`, `email`, `phoneNumber`, `specialization`)"+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `doctors` (`id`, `firstName`, `secondName`, `academicTitle`, `email`, `phoneNumber`, `specialization`)" +
                 $" VALUES (NULL, '{firstName}', '{secoundName}', '{title}', '{email}', '{phone}', '{spec}')", con.connection);
             cmd.ExecuteNonQuery();
             con.CloseConection();
@@ -56,8 +58,8 @@ namespace HomeWorkBM5_Aplication.Pages
             if (str == "")
             {
                 errorCatch = true;
-                B7.Visible = true;
-                B7.InnerHtml = "UWAGA: Nie uzupełniono wszystkich wymaganych pól.";
+                ErrorMessage.Visible = true;
+                ErrorMessage.InnerHtml = "UWAGA: Nie uzupełniono wszystkich wymaganych pól.";
                 switch (err)
                 {
                     case "Imię":
@@ -79,7 +81,7 @@ namespace HomeWorkBM5_Aplication.Pages
                 return null;
             }
 
-            B7.Visible = false;
+            ErrorMessage.Visible = false;
             return str;
         }
 

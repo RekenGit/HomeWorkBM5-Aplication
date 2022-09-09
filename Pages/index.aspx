@@ -16,14 +16,11 @@
                 <div id="title">Lekarze</div>
                 <div id="options">
                     <asp:Button ID="Button1" runat="server" OnClick="Button_Add" Text="Dodaj Lekarza" Height="58px" />
-                    <asp:Button ID="Button2" runat="server" OnClick="Button_Remove" Text="Usuń Lekarza" Height="58px" />
                     <asp:Button ID="Button3" runat="server" OnClick="Button_Table" Text="Pokarz w formie tabeli" Height="58px" />
                 </div>
             </div>
             <div id="content">
-                <div runat="server" id="contentBox">
-                
-                </div>
+                <div runat="server" id="contentBox"> </div>
             </div>
         </div>
     </form>

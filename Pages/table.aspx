@@ -16,11 +16,28 @@
                 <div id="title">Lekarze</div>
                 <div id="options">
                     <asp:Button ID="Button1" runat="server" OnClick="Button_Add" Text="Dodaj Lekarza" Height="58px" />
-                    <asp:Button ID="Button2" runat="server" OnClick="Button_Remove" Text="Usuń Lekarza" Height="58px" />
                     <asp:Button ID="Button3" runat="server" OnClick="Button_Normal" Text="Normalny widok" Height="58px" />
                 </div>
             </div>
-            <asp:GridView ID="GridView1" runat="server" Height="679px" Width="100%"></asp:GridView>
+            <div style="overflow-y: scroll;height: 479px; width:100%;">
+                <asp:GridView ID="GridView1" runat="server" Height="679px" Width="100%" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="id" HeaderText="Id" />
+                        <asp:BoundField DataField="firstName" HeaderText="Imię" />
+                        <asp:BoundField DataField="secondName" HeaderText="Nazwisko" />
+                        <asp:BoundField DataField="academicTitle" HeaderText="Tytuł naukowy" />
+                        <asp:BoundField DataField="email" HeaderText="Email" />
+                        <asp:BoundField DataField="phoneNumber" HeaderText="Numer telefonu" />
+                        <asp:BoundField DataField="specialization" HeaderText="Specializacja" />
+                        <asp:TemplateField HeaderText="Opcje">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="Button_Remove1" runat="server" OnClick="Button_Remove" CommandArgument='<%# Eval("id") %>' Text="Usuń"/>
+                                <asp:LinkButton ID="Button_Change1" runat="server" OnClick="Button_Change" CommandArgument='<%# Eval("id") %>' Text="Edytuj"/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
     </form>
 </body>

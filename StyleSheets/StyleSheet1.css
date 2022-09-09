@@ -32,7 +32,7 @@
 }
 
 #content {
-    height: 800px;
+    height: 679px;
     border: 2px solid black;
     padding: 30px 50px;
 }
@@ -53,8 +53,12 @@
 }
 .doctor h3 { margin: 0; }
 
-.wrong{
+.wrong {
     font-size: 24px;
     color: red;
     font-weight: bold;
+}
+
+td a {
+    margin-left: 20px;
 }
