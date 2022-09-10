@@ -11,7 +11,7 @@ namespace HomeWorkBM5_Aplication.Pages
 {
 
 
-    public partial class WebForm2
+    public partial class WebForm4
     {
 
         /// <summary>

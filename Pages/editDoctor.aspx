@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addDoctor.aspx.cs" Inherits="HomeWorkBM5_Aplication.Pages.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editDoctor.aspx.cs" Inherits="HomeWorkBM5_Aplication.Pages.WebForm4" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div id="center">
             <div id="header">
-                <div id="title">Dodawanie Lekarza</div>
+                <div id="title">Lekarze</div>
                 <div class="options">
                     <!-- Go back button -->
                     <asp:Button ID="Button3" runat="server" OnClick="Button_Back" Text="Cofnij" Height="58px" />

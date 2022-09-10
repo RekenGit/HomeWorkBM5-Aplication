@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="table.aspx.cs" Inherits="HomeWorkBM5_Aplication.Pages.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="table.aspx.cs" Inherits="HomeWorkBM5_Aplication.Pages.WebForm3" %>
 
 <!DOCTYPE html>
 
@@ -14,11 +14,13 @@
         <div id="center">
             <div id="header">
                 <div id="title">Lekarze</div>
-                <div id="options">
+                <div class="options">
+                    <!-- Add new record, Normal view buttons -->
                     <asp:Button ID="Button1" runat="server" OnClick="Button_Add" Text="Dodaj Lekarza" Height="58px" />
                     <asp:Button ID="Button3" runat="server" OnClick="Button_Normal" Text="Normalny widok" Height="58px" />
                 </div>
             </div>
+            <!-- Data base created table -->
             <div style="overflow-y: scroll;height: 479px; width:100%;">
                 <asp:GridView ID="GridView1" runat="server" Height="679px" Width="100%" AutoGenerateColumns="False">
                     <Columns>
@@ -31,6 +33,7 @@
                         <asp:BoundField DataField="specialization" HeaderText="Specializacja" />
                         <asp:TemplateField HeaderText="Opcje">
                             <ItemTemplate>
+                                <!-- Rmove, Edit buttons -->
                                 <asp:LinkButton ID="Button_Remove1" runat="server" OnClick="Button_Remove" CommandArgument='<%# Eval("id") %>' Text="Usuń"/>
                                 <asp:LinkButton ID="Button_Change1" runat="server" OnClick="Button_Change" CommandArgument='<%# Eval("id") %>' Text="Edytuj"/>
                             </ItemTemplate>

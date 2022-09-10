@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace HomeWorkBM5_Aplication.Pages
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class WebForm4 : System.Web.UI.Page
     {
         readonly ConnectMySql con = new ConnectMySql();
         protected void Page_Load(object sender, EventArgs e)
@@ -29,12 +29,29 @@ namespace HomeWorkBM5_Aplication.Pages
                     DropDownList1.DataBind();
                 }
                 con.CloseConection();
+
+                // Get the value that was send from previous page.
+                string id = Session["id"].ToString();
+                con.StartConection(Response);
+                // Get firstName, lastName, academicTitle, email, phoneNumber, specialization from data base.
+                cmd = new MySqlCommand($"SELECT firstName, lastName, academicTitle, email, phoneNumber, specialization FROM doctors WHERE {id} = id", con.connection);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    FirstName.Text = reader.GetString(0);
+                    LastName.Text = reader.GetString(1);
+                    TitleName.Text = reader.GetString(2);
+                    Email.Text = reader.GetString(3);
+                    PhoneNum.Text = reader.GetString(4);
+                    DropDownList1.SelectedValue = reader.GetValue(5)+"";
+                }
+                con.CloseConection();
             }
         }
         // Go back button
         protected void Button_Back(object sender, EventArgs e)
         {
-            Response.Redirect("index.aspx");
+            Response.Redirect("table.aspx");
         }
         readonly Functions function = new Functions();
         // Confirm the data button
@@ -52,11 +69,13 @@ namespace HomeWorkBM5_Aplication.Pages
             if (function.errorCatch) return;
 
             con.StartConection(Response);
-            // Insert the values to the data base.
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `doctors` (`id`, `firstName`, `lastName`, `academicTitle`, `email`, `phoneNumber`, `specialization`)" +
-                $" VALUES (NULL, '{firstName}', '{lastName}', '{title}', '{email}', '{phone}', '{spec}')", con.connection);
+            string id = Session["id"].ToString();
+            // Modify the values in the data base.
+            MySqlCommand cmd = new MySqlCommand($"UPDATE doctors SET firstName = '{firstName}', lastName = '{lastName}', "+
+                $"academicTitle = '{title}', email = '{email}', phoneNumber = '{phone}', specialization = '{spec}' WHERE id = {id}", con.connection);
             cmd.ExecuteNonQuery();
             con.CloseConection();
+            Response.Redirect("table.aspx");
         }
         // Refresh the red dot, when textbox is filed.
         protected void FirstName_TextChanged(object sender, EventArgs e) { B1.Visible = false; }
