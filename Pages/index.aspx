@@ -19,7 +19,7 @@
                     <asp:Button ID="Button1" runat="server" OnClick="Button_Table" Text="Modyfikuj dane" Height="58px" />
                 </div>
             </div>
-            <div id="content">
+            <div id="contentIndex">
                 <!-- Data base content -->
                 <div runat="server" id="contentBox"></div>
             </div>
