@@ -84,6 +84,10 @@ td a {
     float: left;
 }
 
-    .hiddenContentDivide h4 {
-        color: #404040;
-    }
+.hiddenContentDivide h4 {
+    color: #404040;
+}
+
+#LinkButton2{
+    padding-bottom: 30px;
+}

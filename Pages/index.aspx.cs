@@ -48,18 +48,14 @@ namespace HomeWorkBM5_Aplication
                 createDiv3.ID = "dhc_" + reader.GetValue(0);
                 createDiv3.Attributes.Add("class", "doctorHidenContent");
                 createDiv3.Visible = false;
-                createDiv3.InnerHtml = $"<div class=\"hiddenContentDivide\"><h3>Tytuł naukowy: </h3><h4>{reader.GetString(3)}</h4></div>"+
+                createDiv3.InnerHtml = 
+                    $"<div class=\"hiddenContentDivide\"><h3>Tytuł naukowy: </h3><h4>{reader.GetString(3)}</h4></div>"+
                     $"<div class=\"hiddenContentDivide\"><h3>Email: </h3><h4>{reader.GetString(4)}</h4></div>"+
                     $"<div class=\"hiddenContentDivide\"><h3>Numer telefonu: </h3><h4>{reader.GetString(5)}</h4></div>"+
                     $"<div class=\"hiddenContentDivide\"><h3>Specializacja: </h3><h4>{reader.GetString(6)}</h4></div>";
                 contentBox.Controls.Add(createDiv3);
             }
             con.CloseConection();
-        }
-        // Add new record button
-        protected void Button_Add(object sender, EventArgs e)
-        {
-            Response.Redirect("addDoctor.aspx");
         }
         // Table view button
         protected void Button_Table(object sender, EventArgs e)

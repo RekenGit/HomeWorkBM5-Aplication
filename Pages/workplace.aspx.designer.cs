@@ -11,7 +11,7 @@ namespace HomeWorkBM5_Aplication.Pages
 {
 
 
-    public partial class WebForm2
+    public partial class Workplace
     {
 
         /// <summary>
@@ -42,13 +42,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Kontrolka FirstName.
+        /// Kontrolka DoctorId.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstName;
+        protected global::System.Web.UI.WebControls.TextBox DoctorId;
 
         /// <summary>
         /// Kontrolka B1.
@@ -69,13 +69,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Kontrolka LastName.
+        /// Kontrolka JobName.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LastName;
+        protected global::System.Web.UI.WebControls.TextBox JobName;
 
         /// <summary>
         /// Kontrolka B2.
@@ -96,13 +96,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Kontrolka TitleName.
+        /// Kontrolka CityName.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TitleName;
+        protected global::System.Web.UI.WebControls.TextBox CityName;
 
         /// <summary>
         /// Kontrolka B3.
@@ -123,13 +123,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Kontrolka Email.
+        /// Kontrolka StreetName.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.WebControls.TextBox StreetName;
 
         /// <summary>
         /// Kontrolka B4.
@@ -150,13 +150,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Kontrolka PhoneNum.
+        /// Kontrolka StreetNumber.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PhoneNum;
+        protected global::System.Web.UI.WebControls.TextBox StreetNumber;
 
         /// <summary>
         /// Kontrolka B5.
@@ -177,13 +177,76 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Kontrolka DropDownList1.
+        /// Kontrolka Apartment.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.TextBox Apartment;
+
+        /// <summary>
+        /// Kontrolka B6.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl B6;
+
+        /// <summary>
+        /// Kontrolka Label7.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+
+        /// <summary>
+        /// Kontrolka ZipCode.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ZipCode;
+
+        /// <summary>
+        /// Kontrolka B7.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl B7;
+
+        /// <summary>
+        /// Kontrolka Label8.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+
+        /// <summary>
+        /// Kontrolka Province.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Province;
+
+        /// <summary>
+        /// Kontrolka B8.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl B8;
 
         /// <summary>
         /// Kontrolka ErrorMessage.

@@ -11,7 +11,7 @@ namespace HomeWorkBM5_Aplication.Pages
 {
 
 
-    public partial class WebForm4
+    public partial class Doctor
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Kontrolka Button3.
+        /// Kontrolka Button1.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// Kontrolka Label1.

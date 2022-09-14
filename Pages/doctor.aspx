@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editDoctor.aspx.cs" Inherits="HomeWorkBM5_Aplication.Pages.WebForm4" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="doctor.aspx.cs" Inherits="HomeWorkBM5_Aplication.Pages.Doctor" %>
 
 <!DOCTYPE html>
 
@@ -13,10 +13,10 @@
     <form id="form1" runat="server">
         <div id="center">
             <div id="header">
-                <div id="title">Lekarze</div>
+                <div id="title">Dodawanie Lekarza</div>
                 <div class="options">
                     <!-- Go back button -->
-                    <asp:Button ID="Button3" runat="server" OnClick="Button_Back" Text="Cofnij" Height="58px" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button_Back" Text="Cofnij" Height="58px" />
                 </div>
             </div>
             <div id="content">
@@ -51,9 +51,11 @@
                 <br /><br />
                 <div class="options">
                     <!-- Error message label -->
-                    <p runat="server" id="ErrorMessage" visible="false" class="wrong"></p>
+                    <p runat="server" id="ErrorMessage" visible="false" class="wrong">
+                        UWAGA: Nie uzupełniono wszystkich wymaganych pól.
+                    </p>
                     <!-- Confirm the data button -->
-                    <asp:Button ID="Button2" runat="server" OnClick="Button_Send" Text="Zatwierdz dane" Height="58px" />
+                    <asp:Button ID="Button2" runat="server" OnClick="Button_Send" Height="58px" />
                 </div>
             </div>
         </div>

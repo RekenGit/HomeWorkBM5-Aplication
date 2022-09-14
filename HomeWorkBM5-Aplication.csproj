@@ -154,10 +154,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pages\editDoctor.aspx" />
+    <Content Include="Pages\doctor.aspx" />
     <Content Include="Pages\table.aspx" />
-    <Content Include="Pages\addDoctor.aspx" />
     <Content Include="Pages\errorPage.aspx" />
+    <Content Include="Pages\workplace.aspx" />
     <Content Include="StyleSheets\StyleSheet1.css" />
     <Content Include="Web.config" />
     <Content Include="Pages\index.aspx" />
@@ -165,12 +165,12 @@
   <ItemGroup>
     <Compile Include="connectMySql.cs" />
     <Compile Include="functions.cs" />
-    <Compile Include="Pages\editDoctor.aspx.cs">
-      <DependentUpon>editDoctor.aspx</DependentUpon>
+    <Compile Include="Pages\doctor.aspx.cs">
+      <DependentUpon>doctor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\editDoctor.aspx.designer.cs">
-      <DependentUpon>editDoctor.aspx</DependentUpon>
+    <Compile Include="Pages\doctor.aspx.designer.cs">
+      <DependentUpon>doctor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\table.aspx.cs">
       <DependentUpon>table.aspx</DependentUpon>
@@ -179,19 +179,19 @@
     <Compile Include="Pages\table.aspx.designer.cs">
       <DependentUpon>table.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\addDoctor.aspx.cs">
-      <DependentUpon>addDoctor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\addDoctor.aspx.designer.cs">
-      <DependentUpon>addDoctor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\errorPage.aspx.cs">
       <DependentUpon>errorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\errorPage.aspx.designer.cs">
       <DependentUpon>errorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\workplace.aspx.cs">
+      <DependentUpon>workplace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\workplace.aspx.designer.cs">
+      <DependentUpon>workplace.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\index.aspx.cs">
@@ -211,6 +211,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

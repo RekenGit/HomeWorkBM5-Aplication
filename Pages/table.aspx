@@ -15,9 +15,8 @@
             <div id="header">
                 <div id="title">Lekarze</div>
                 <div class="options">
-                    <!-- Add new record, Normal view buttons -->
-                    <asp:Button ID="Button1" runat="server" OnClick="Button_Add" Text="Dodaj Lekarza" Height="58px" />
-                    <asp:Button ID="Button3" runat="server" OnClick="Button_Normal" Text="Normalny widok" Height="58px" />
+                    <!-- Normal view button -->
+                    <asp:Button ID="Button1" runat="server" OnClick="Button_Normal" Text="Podgląd" Height="58px" />
                 </div>
             </div>
             <!-- Data base created table -->
@@ -34,13 +33,42 @@
                         <asp:TemplateField HeaderText="Opcje">
                             <ItemTemplate>
                                 <!-- Rmove, Edit buttons -->
-                                <asp:LinkButton ID="Button_Remove1" runat="server" OnClick="Button_Remove" CommandArgument='<%# Eval("id") %>' Text="Usuń"/>
-                                <asp:LinkButton ID="Button_Change1" runat="server" OnClick="Button_Change" CommandArgument='<%# Eval("id") %>' Text="Edytuj"/>
+                                <asp:LinkButton ID="Button_Remove1" runat="server" OnClick="Remove_Record" CommandArgument='<%# "D"+Eval("id") %>' Text="Usuń"/>
+                                <asp:LinkButton ID="Button_Change1" runat="server" OnClick="Change_Record" CommandArgument='<%# "D"+Eval("id") %>' Text="Edytuj"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>
+            <br />
+            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Button_Add" CommandArgument="doctor" Text="Dodaj Lekarza"/>
+            <div id="header">
+                <div id="title">Miejsca Pracy</div>
+            </div>
+            <!-- Data base created table -->
+            <div style="overflow-y: scroll;height: 479px; width:100%;">
+                <asp:GridView ID="GridView2" runat="server" Height="679px" Width="100%" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="id" HeaderText="Id" />
+                        <asp:BoundField DataField="doctorId" HeaderText="Id Doktora" />
+                        <asp:BoundField DataField="jobName" HeaderText="Nazwa" />
+                        <asp:BoundField DataField="cityName" HeaderText="Miasto" />
+                        <asp:BoundField DataField="streetName" HeaderText="Ulica" />
+                        <asp:BoundField DataField="streetNumber" HeaderText="Numer" />
+                        <asp:BoundField DataField="apartment" HeaderText="Lokal" />
+                        <asp:BoundField DataField="zipCode" HeaderText="Kod pocztowy" />
+                        <asp:BoundField DataField="province" HeaderText="Województwo" />
+                        <asp:TemplateField HeaderText="Opcje">
+                            <ItemTemplate>
+                                <!-- Rmove, Edit buttons -->
+                                <asp:LinkButton ID="Button_Remove2" runat="server" OnClick="Remove_Record" CommandArgument='<%# "W"+Eval("id") %>' Text="Usuń"/>
+                                <asp:LinkButton ID="Button_Change2" runat="server" OnClick="Change_Record" CommandArgument='<%# "W"+Eval("id") %>' Text="Edytuj"/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <br /><asp:LinkButton ID="LinkButton2" runat="server" OnClick="Button_Add" CommandArgument="workplace" Text="Dodaj Miejsce pracy"/>
         </div>
     </form>
 </body>

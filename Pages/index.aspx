@@ -16,8 +16,7 @@
                 <div id="title">Lekarze</div>
                 <div class="options">
                     <!-- Add new record, Table view buttons -->
-                    <asp:Button ID="Button1" runat="server" OnClick="Button_Add" Text="Dodaj Lekarza" Height="58px" />
-                    <asp:Button ID="Button3" runat="server" OnClick="Button_Table" Text="Pokarz w formie tabeli" Height="58px" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button_Table" Text="Modyfikuj dane" Height="58px" />
                 </div>
             </div>
             <div id="content">
