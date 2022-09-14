@@ -186,15 +186,6 @@ namespace HomeWorkBM5_Aplication.Pages
         protected global::System.Web.UI.WebControls.TextBox Apartment;
 
         /// <summary>
-        /// Kontrolka B6.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl B6;
-
-        /// <summary>
         /// Kontrolka Label7.
         /// </summary>
         /// <remarks>

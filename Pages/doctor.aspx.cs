@@ -75,7 +75,11 @@ namespace HomeWorkBM5_Aplication.Pages
             string email = function.ErrorMessage(Email.Text, 4);
             string phone = function.ErrorMessage(PhoneNum.Text, 5);
             int spec = Convert.ToInt32(DropDownList1.SelectedItem.Value);
-            if (function.errorCatch) return;
+            if (function.errorCatch)
+            {
+                ErrorMessage.Visible = true;
+                return;
+            }
 
             string option = Session["option"].ToString();
             if (option == "add")

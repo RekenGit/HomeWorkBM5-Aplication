@@ -66,7 +66,11 @@ namespace HomeWorkBM5_Aplication.Pages
             string apartment = Apartment.Text == "" ? "NULL" : "\'"+Apartment.Text+"\'";
             string zipCode = function.ErrorMessage(ZipCode.Text, 6);
             string province = function.ErrorMessage(Province.Text, 7);
-            if (function.errorCatch) return;
+            if (function.errorCatch)
+            {
+                ErrorMessage.Visible = true;
+                return;
+            }
             string option = Session["option"].ToString();
             if (option == "add")
             {
@@ -96,7 +100,6 @@ namespace HomeWorkBM5_Aplication.Pages
         protected void CityName_TextChanged(object sender, EventArgs e) { B3.Visible = false; }
         protected void StreetName_TextChanged(object sender, EventArgs e) { B4.Visible = false; }
         protected void StreetNumber_TextChanged(object sender, EventArgs e) { B5.Visible = false; }
-        protected void Apartment_TextChanged(object sender, EventArgs e) { B6.Visible = false; }
         protected void ZipCode_TextChanged(object sender, EventArgs e) { B7.Visible = false; }
         protected void Province_TextChanged(object sender, EventArgs e) { B8.Visible = false; }
     }

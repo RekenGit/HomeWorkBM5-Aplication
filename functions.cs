@@ -30,7 +30,6 @@ namespace HomeWorkBM5_Aplication
             if (str == "")
             {
                 errorCatch = true;
-                errorMes.Visible = true;
                 switch (err)
                 {
                     case 1:
