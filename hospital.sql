@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Wrz 2022, 13:41
+-- Czas generowania: 10 Wrz 2022, 21:56
 -- Wersja serwera: 10.4.17-MariaDB
 -- Wersja PHP: 8.0.0
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `doctors` (
   `id` int(11) NOT NULL,
   `firstName` text NOT NULL,
-  `secondName` text NOT NULL,
-  `academicTittle` text NOT NULL,
+  `lastName` text NOT NULL,
+  `academicTitle` text NOT NULL,
   `email` text NOT NULL,
   `phoneNumber` text NOT NULL,
   `specialization` int(11) NOT NULL
@@ -41,13 +41,14 @@ CREATE TABLE `doctors` (
 -- Zrzut danych tabeli `doctors`
 --
 
-INSERT INTO `doctors` (`id`, `firstName`, `secondName`, `academicTittle`, `email`, `phoneNumber`, `specialization`) VALUES
+INSERT INTO `doctors` (`id`, `firstName`, `lastName`, `academicTitle`, `email`, `phoneNumber`, `specialization`) VALUES
 (1, 'Damian', 'Nowakowski', 'Profesor', '123456@gmail.com', '000111222', 1),
 (2, 'Dawid', 'Kowalski', 'Lekarz', '654321@gmail.com', '123456789', 2),
 (3, 'Dawid', 'Sakowski', 'Doktor', 'DS-doctor@gmail.com', '101022233', 3),
 (4, 'Bartosz', 'Kolanko', 'Lekarz', 'loremIpsum@gmail.com', '333222111', 4),
 (5, 'Maria', 'Skoczek', 'Doktor', 'MSMS@gmail.com', '999888777', 3),
-(6, 'Ivan', 'Bobrov', 'Lekarz', 'IBmail@gmail.com', '454545454', 5);
+(6, 'Ivan', 'Bobrov', 'Lekarz', 'IBmail@gmail.com', '454545454', 5),
+(7, 'Wiktor', 'Róża', 'Lekarz', 'testWR@gmail.com', '030000030', 4);
 
 -- --------------------------------------------------------
 
@@ -104,6 +105,17 @@ INSERT INTO `workplace` (`id`, `doctorId`, `jobName`, `cityName`, `streetName`, 
 (8, 5, 'Szpital Główny', 'Warszawa', 'Żelazna', '90', NULL, '01-004', 'Mazowieckie'),
 (9, 6, 'Szpital Kliniczny', 'Kraków', 'Koniecznych', '5a', NULL, '31-123', 'Małopolskie');
 
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `__efmigrationshistory`
+--
+
+CREATE TABLE `__efmigrationshistory` (
+  `MigrationId` varchar(150) NOT NULL,
+  `ProductVersion` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indeksy dla zrzutów tabel
 --
@@ -127,6 +139,12 @@ ALTER TABLE `workplace`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksy dla tabeli `__efmigrationshistory`
+--
+ALTER TABLE `__efmigrationshistory`
+  ADD PRIMARY KEY (`MigrationId`);
+
+--
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
 
@@ -134,7 +152,7 @@ ALTER TABLE `workplace`
 -- AUTO_INCREMENT dla tabeli `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT dla tabeli `specialization`
