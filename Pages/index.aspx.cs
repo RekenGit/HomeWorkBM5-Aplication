@@ -73,7 +73,6 @@ namespace HomeWorkBM5_Aplication
                         // Create Div that contain specific job.
                         HtmlGenericControl createDiv5 = new HtmlGenericControl("div");
                         string local = reader2.GetValue(4).ToString() == "" ? "" : $" lok. {reader2.GetValue(4)}"; ;
-                        System.Diagnostics.Debug.WriteLine(reader2.GetValue(4) + " | "+ reader2.GetValue(4).GetType());
                         createDiv5.InnerHtml = $"<h4>{reader2.GetValue(0)}</h4>"+
                             $"<p>{reader2.GetString(6)} </p>"+
                             $"<p>ul. {reader2.GetString(2)} {reader2.GetValue(3)}" + local + "<br>"+
