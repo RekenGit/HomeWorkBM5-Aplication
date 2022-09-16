@@ -47,7 +47,7 @@
                 <br />
                 <!-- Apartment -->
                 <asp:Label ID="Label6" runat="server" Text="Lokal: " Font-Size="30px"></asp:Label>
-                <asp:TextBox ID="Apartment" runat="server" Rows="1" Font-Size="30px" Height="70px" Width="500px" OnTextChanged="Apartment_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="Apartment" runat="server" Rows="1" Font-Size="30px" Height="70px" Width="500px"></asp:TextBox>
                 <br />
                 <!-- Zip code -->
                 <asp:Label ID="Label7" runat="server" Text="Kod pocztowy: " Font-Size="30px"></asp:Label>
