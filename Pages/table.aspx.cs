@@ -99,7 +99,7 @@ namespace HomeWorkBM5_Aplication.Pages
         // Normal view button
         protected void Button_Normal(object sender, EventArgs e)
         {
-            Response.Redirect("index.aspx");
+            Response.Redirect("default.aspx");
         }
     }
 }
